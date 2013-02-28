@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  problem: 
+  title: MyString
+  input: 
+  output: 
+  max_time: 1.5
+
+two:
+  problem: 
+  title: MyString
+  input: 
+  output: 
+  max_time: 1.5
