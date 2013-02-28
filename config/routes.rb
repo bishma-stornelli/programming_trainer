@@ -1,9 +1,9 @@
 ProgrammingTrainer::Application.routes.draw do
   get "sessions/new"
 
-  get "sessions/create"
+  post "sessions/create"
 
-  get "sessions/destroy"
+  match "sessions/destroy", :via => :delete
 
   resources :users
 

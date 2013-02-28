@@ -38,17 +38,20 @@
             </div>
           </div>
           <div id="sidebar">
-            <ul>
-              <li>
-                <h2>This is a Sidebar</h2>
+            <h2>Users</h2>
 
-                <ul>
-                  <li>
-                    And this is an item
-                  </li>
-                </ul>
-              </li>
+            <% if signed_in? %>
+            <ul>
+                <li>
+                    <%= link_to "My account" , user_path(current_user) %>
+                </li>
+                <li>
+                    <%= link_to "Sign out" , sessions_destroy_path, method: "delete" %>
+                </li>
             </ul>
+            <% else %>
+                <%= render 'sessions/form' %>
+            <% end %>
           </div>
           <div style="clear: both;"></div>
         </div>

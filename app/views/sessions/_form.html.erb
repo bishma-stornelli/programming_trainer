@@ -1,0 +1,22 @@
+<%= form_for(:session, url: sessions_create_path) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.text_field :email %> </td>
+    </tr>
+    <tr>
+      <td><%= f.label :password %></td>
+    </tr>
+    <tr>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= link_to "New User?" , new_user_path %>
+        <%= f.submit "Sign in", class: "submit" %>
+      </td>
+    </tr>
+  </table>
+<% end %>
