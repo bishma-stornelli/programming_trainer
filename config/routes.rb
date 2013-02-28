@@ -1,4 +1,6 @@
 ProgrammingTrainer::Application.routes.draw do
+  resources :problems
+
   get "sessions/new"
 
   post "sessions/create"
