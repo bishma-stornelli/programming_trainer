@@ -7,8 +7,57 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="logo">
+        <a href="/">
+          <%= image_tag("rails.png", :alt => "Programming Trainer") %> 
+        </a>
+      </div>
+      <div id="menu">
+        <ul>
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <li>
+            <%= link_to "Users" , users_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end #header -->
+    <div id="page">
+      <div id="page-bgtop">
+        <div id="page-bgbtm">
+          <div id="content">
+            <div class="alert">
+             
+            </div>
+            <div class="post">
+              <%= yield %>
+            </div>
+          </div>
+          <div id="sidebar">
+            <ul>
+              <li>
+                <h2>This is a Sidebar</h2>
 
-<%= yield %>
+                <ul>
+                  <li>
+                    And this is an item
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+
+    </div>
+  </div>
 
 </body>
 </html>
