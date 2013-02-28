@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  problem: 
+  date: 2013-02-28
+  status: 1
+  time_running: 1.5
+
+two:
+  user: 
+  problem: 
+  date: 2013-02-28
+  status: 1
+  time_running: 1.5
