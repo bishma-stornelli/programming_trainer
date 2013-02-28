@@ -31,7 +31,7 @@
         <div id="page-bgbtm">
           <div id="content">
             <div class="alert">
-             
+				<%= (render_flash flash).html_safe %>
             </div>
             <div class="post">
               <%= yield %>
