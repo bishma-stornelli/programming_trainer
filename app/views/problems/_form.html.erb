@@ -1,3 +1,4 @@
+# encoding: UTF-8
 <%= form_for(@problem) do |f| %>
   <% if @problem.errors.any? %>
     <div id="error_explanation">
@@ -31,6 +32,42 @@
     <%= f.label :output_format %><br />
     <%= f.text_area :output_format %>
   </div>
+  
+  <div class="test-cases">
+    <h3>Casos de prueba</h3>
+    <%= f.fields_for :test_cases do |test_case_form| %>
+      <div class="test-case">
+      
+        <div>
+          <%= test_case_form.label :title, 'Título:' %>
+          <%= test_case_form.text_field :title %>
+        </div>
+        
+        <div>
+          <%= test_case_form.label :input, 'Archivo de entrada:' %>
+          <%= test_case_form.file_field :input %>
+        </div>        
+        
+        <div>
+          <%= test_case_form.label :output, 'Archivo de salida:' %>
+          <%= test_case_form.file_field :output %>
+        </div>
+        
+        <div>
+          <%= test_case_form.label :max_time, 'Tiempo máximo (s):' %>
+          <%= test_case_form.number_field :max_time %>
+        </div>
+
+        <% unless test_case_form.object.nil? || test_case_form.object.new_record? %>
+          <div>
+            <%= test_case_form.label :_destroy, 'Remove:' %>
+            <%= test_case_form.check_box :_destroy %>
+          </div>
+        <% end %>        
+      </div>
+  <% end %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

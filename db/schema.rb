@@ -11,7 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228224527) do
+ActiveRecord::Schema.define(:version => 20130228235229) do
+
+  create_table "problems", :force => true do |t|
+    t.string   "cod"
+    t.string   "title"
+    t.text     "description"
+    t.text     "input_format"
+    t.text     "output_format"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "solutions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "problem_id"
+    t.date     "date"
+    t.integer  "status"
+    t.float    "time_running"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "solutions", ["problem_id"], :name => "index_solutions_on_problem_id"
+  add_index "solutions", ["user_id"], :name => "index_solutions_on_user_id"
+
+  create_table "test_cases", :force => true do |t|
+    t.integer  "problem_id"
+    t.string   "title"
+    t.string   "input_file_name"
+    t.string   "input_content_type"
+    t.integer  "input_file_size"
+    t.datetime "input_updated_at"
+    t.string   "output_file_name"
+    t.string   "output_content_type"
+    t.integer  "output_file_size"
+    t.datetime "output_updated_at"
+    t.float    "max_time"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "test_cases", ["problem_id"], :name => "index_test_cases_on_problem_id"
 
   create_table "users", :force => true do |t|
     t.string   "firstname"

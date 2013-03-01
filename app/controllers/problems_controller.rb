@@ -25,7 +25,8 @@ class ProblemsController < ApplicationController
   # GET /problems/new.json
   def new
     @problem = Problem.new
-
+	2.times { @problem.test_cases.build }
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @problem }
@@ -35,6 +36,7 @@ class ProblemsController < ApplicationController
   # GET /problems/1/edit
   def edit
     @problem = Problem.find(params[:id])
+	@problem.test_cases.build
   end
 
   # POST /problems
