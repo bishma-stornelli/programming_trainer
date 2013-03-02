@@ -1,5 +1,5 @@
 class TestCase < ActiveRecord::Base
-  belongs_to :problem
+  belongs_to :problem, :inverse_of => :test_cases
   attr_accessible :input, :max_time, :output, :title
   
   has_attached_file :input

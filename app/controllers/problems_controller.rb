@@ -43,12 +43,13 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(params[:problem])
-
+	
     respond_to do |format|
       if @problem.save
         format.html { redirect_to @problem, notice: 'Problem was successfully created.' }
         format.json { render json: @problem, status: :created, location: @problem }
       else
+	    @problem.test_cases.build if @problem.test_cases.empty?
         format.html { render action: "new" }
         format.json { render json: @problem.errors, status: :unprocessable_entity }
       end

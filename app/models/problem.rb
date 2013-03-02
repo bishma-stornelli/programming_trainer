@@ -5,8 +5,8 @@ class Problem < ActiveRecord::Base
   validates :cod, :uniqueness => true
   validate :one_test_case_at_least
   
-  has_many :test_cases
-  has_many :solutions
+  has_many :test_cases, :inverse_of => :problem
+  has_many :solutions, :inverse_of => :problem
   has_many :users, :through => :solutions
   
   accepts_nested_attributes_for :test_cases, 

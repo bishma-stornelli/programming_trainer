@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :firstname, :lastname, :presence => true, :format => { :with => /[a-zA-Z ]*/ }
   
-  has_many :solutions
+  has_many :solutions, :inverse_of => :user
   has_many :problems, :through => :solutions
 end

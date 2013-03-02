@@ -1,5 +1,4 @@
-# encoding: UTF-8
-<%= form_for(@problem) do |f| %>
+ï»¿<%= form_for(@problem) do |f| %>
   <% if @problem.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
@@ -36,10 +35,10 @@
   <div class="test-cases">
     <h3>Casos de prueba</h3>
     <%= f.fields_for :test_cases do |test_case_form| %>
-      <div class="test-case">
+      <div class="test-case" style="margin: 20px">
       
         <div>
-          <%= test_case_form.label :title, 'Título:' %>
+          <%= test_case_form.label :title, 'Titulo:' %>
           <%= test_case_form.text_field :title %>
         </div>
         
@@ -54,7 +53,7 @@
         </div>
         
         <div>
-          <%= test_case_form.label :max_time, 'Tiempo máximo (s):' %>
+          <%= test_case_form.label :max_time, 'Tiempo maximo (s):' %>
           <%= test_case_form.number_field :max_time %>
         </div>
 
