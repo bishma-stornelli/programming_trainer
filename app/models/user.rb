@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   
   has_many :solutions, :inverse_of => :user
   has_many :problems, :through => :solutions
+  
+  def name
+    "#{firstname} #{lastname}"
+  end
 end

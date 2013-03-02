@@ -1,0 +1,23 @@
+<h1>Soluciones al problema <%= @problem.cod %></h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Usuario</th>
+    <th>Status</th>
+    <th>Tiempo de ejecucion</th>
+  </tr>
+
+<% @solutions.each do |solution| %>
+  <tr>
+    <td><%= solution.date %></td>
+    <td><%= solution.user.name %></td>
+    <td><%= solution.status_display %></td>
+    <td><%= solution.time_running %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', problem_path(@problem) %>

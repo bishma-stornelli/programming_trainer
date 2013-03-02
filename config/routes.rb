@@ -1,5 +1,7 @@
 ProgrammingTrainer::Application.routes.draw do
-  resources :problems
+  resources :problems do
+    resources :solutions, :only => [:index, :create]
+  end
 
   get "sessions/new"
 

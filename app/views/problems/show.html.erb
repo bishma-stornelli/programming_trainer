@@ -25,6 +25,10 @@
   <%= @problem.output_format %>
 </p>
 
+<p>
+  <%= link_to "Soluciones", problem_solutions_path(@problem) %>
+</p>
+
 
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>
