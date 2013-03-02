@@ -6,6 +6,11 @@ class SolutionsController < ApplicationController
   end
   
   def create
+	@solution = @problem.solutions.build(params[:solution])
+	@solution.user = current_user
+	@solution.save!
+	@solution.run
+	redirect_to :action => :index
   end
   
   private

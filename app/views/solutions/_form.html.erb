@@ -1,0 +1,5 @@
+﻿<h3>Sube tu solucion</h3>
+<%= form_for [@problem, @problem.solutions.build] do |f| %>
+    <p><%= f.file_field :file %></p>
+	<p><%= f.submit "Enviar solución" %>
+<% end %>

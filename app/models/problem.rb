@@ -6,7 +6,7 @@ class Problem < ActiveRecord::Base
   validate :one_test_case_at_least
   
   has_many :test_cases, :inverse_of => :problem
-  has_many :solutions, :inverse_of => :problem
+  has_many :solutions, :inverse_of => :problem, :order => :created_at
   has_many :users, :through => :solutions
   
   accepts_nested_attributes_for :test_cases, 
